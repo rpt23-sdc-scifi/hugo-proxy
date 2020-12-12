@@ -37,7 +37,7 @@ app.use('/hashtags/', createProxyMiddleware({
 }))
 
 app.use('/comments/', createProxyMiddleware({
-  target: 'http://52.14.128.124:4000/',
+  target: 'http://localhost:4000/',
   changeOrigin: true
 }))
 
