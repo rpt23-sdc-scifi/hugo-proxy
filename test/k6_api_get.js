@@ -43,7 +43,7 @@ export let options = {
       timeUnit: "4s",
       duration: "2m",
       startTime: "6m",
-      preAllocatedVUs: 1500,
+      preAllocatedVUs: 2000,
       maxVUs: 3000,
     },
     rps_1500: {
@@ -53,7 +53,7 @@ export let options = {
       timeUnit: "4s",
       duration: "2m",
       startTime: "8m",
-      preAllocatedVUs: 2000,
+      preAllocatedVUs: 3000,
       maxVUs: 5000,
     },
   },

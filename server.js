@@ -1,4 +1,4 @@
-require('newrelic');
+require("newrelic");
 
 var express = require("express");
 // const { truncate } = require("fs");
@@ -8,9 +8,6 @@ var port = 8000;
 var bodyParser = require("body-parser");
 
 var app = express();
-app.use(express.static("client"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   "/songdata/",
@@ -53,17 +50,17 @@ app.use(
 );
 
 app.use(
-  "/api/comments/",
+  "/users/",
   createProxyMiddleware({
-    target: "http://localhost:4000/",
+    target: "http://18.218.58.9:4002/",
     changeOrigin: true,
   })
 );
 
 app.use(
-  "/users/",
+  "/api/comments/",
   createProxyMiddleware({
-    target: "http://18.218.58.9:4002/",
+    target: "http://localhost:4000/",
     changeOrigin: true,
   })
 );
@@ -75,7 +72,7 @@ app.use(
     // pathRewrite: () => {
     //   return "/main.js";
     // },
-    pathRewrite: {'.*' : '/main.js'},
+    pathRewrite: { ".*": "/main.js" },
     changeOrigin: true,
   })
 );
@@ -83,6 +80,10 @@ app.use(
 app.use("/:current", (req, res) => {
   res.sendFile(path.join(__dirname, "/client/index.html"));
 });
+
+app.use(express.static("client"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
   console.log(`Proxy server listening on http://localhost:${port}!`);
