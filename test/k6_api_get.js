@@ -64,37 +64,37 @@ export let options = {
     'http_req_duration{scenario:rps_100}': [
       {
         threshold: "p(90) < 500",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
       {
         threshold: "p(95) < 800",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
       {
         threshold: "p(99.9) < 2000",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
       {
         threshold: "avg < 700",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
     ],
     'http_req_duration{scenario:rps_500}': [
       {
         threshold: "p(90) < 500",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
       {
         threshold: "p(95) < 800",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
       {
         threshold: "p(99.9) < 2000",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
       {
         threshold: "avg < 700",
-        abortOnFail: true,
+        // abortOnFail: true,
       },
     ],
     'http_req_duration{scenario:rps_750}': [
