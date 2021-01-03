@@ -1,5 +1,7 @@
+require('newrelic');
+
 var express = require("express");
-const { truncate } = require("fs");
+// const { truncate } = require("fs");
 var { createProxyMiddleware } = require("http-proxy-middleware");
 var path = require("path");
 var port = 8000;
