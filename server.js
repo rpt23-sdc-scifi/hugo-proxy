@@ -1,4 +1,5 @@
 require("newrelic");
+require("dotenv").config();
 
 var express = require("express");
 // const { truncate } = require("fs");
@@ -60,7 +61,7 @@ app.use(
 app.use(
   "/api/comments/",
   createProxyMiddleware({
-    target: "http://localhost:4000/",
+    target: process.env.COMMENTS_API_URL,
     changeOrigin: true,
   })
 );
@@ -68,7 +69,7 @@ app.use(
 app.use(
   "/bundle-comments.js",
   createProxyMiddleware({
-    target: "http://localhost:4000",
+    target: process.env.COMMENTS_API_URL,
     // pathRewrite: () => {
     //   return "/main.js";
     // },
