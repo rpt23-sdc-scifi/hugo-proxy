@@ -78,13 +78,13 @@ app.use(
   })
 );
 
-app.use("/:current", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/index.html"));
-});
-
 app.use(express.static("client"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use("/:current", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Proxy server listening on port ${port}`);
