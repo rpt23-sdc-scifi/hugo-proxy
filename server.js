@@ -87,5 +87,5 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
-  console.log(`Proxy server listening on http://localhost:${port}!`);
+  console.log(`Proxy server listening on port ${port}`);
 });
